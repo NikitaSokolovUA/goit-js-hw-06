@@ -18,7 +18,7 @@ const listGallery = document.querySelector(".gallery");
 
 images.forEach(image => {  
   listGallery.insertAdjacentHTML('afterbegin',
-    `<li class='gallery-item'><img width='300' href="${image.url}" alt="${image.alt}"/></li>`)
+    `<li class='gallery-item'><img width='600'  src="${image.url}" alt="${image.alt}"/></li>`)
 })
 
 
