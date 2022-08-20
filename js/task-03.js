@@ -16,11 +16,15 @@ const images = [
 
 const listGallery = document.querySelector(".gallery");
 
-images.forEach(image => {  
+// images.forEach(image => {  
+//   listGallery.insertAdjacentHTML('afterbegin',
+//     `<li class='gallery-item'><img width='600'  src="${image.url}" alt="${image.alt}"/></li>`)
+// })
+
+
+
+images.map(({url, alt}) =>  
   listGallery.insertAdjacentHTML('afterbegin',
-    `<li class='gallery-item'><img width='600'  src="${image.url}" alt="${image.alt}"/></li>`)
-})
-
-
-
+    `<li class='gallery-item'><img width='600'  src="${url}" alt="${alt}"/></li>`)
+)
 
