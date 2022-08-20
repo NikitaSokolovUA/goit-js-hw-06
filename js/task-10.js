@@ -19,12 +19,19 @@ createBtn.addEventListener('click', () =>
   createBoxes(countElement)
 )
 
+destroyBtn.addEventListener('click', () => 
+  destroyBoxes()
+);
+
 function createBoxes(amount) {
+  if (boxesArea.children.length >0) {
+    destroyBoxes()
+  }
   for (let i = 0, width = 30; i < amount; i += 1, width +=10){
     boxesArea.insertAdjacentHTML('beforeend',
     `<div style="background-color: ${getRandomHexColor()}; width: ${width}px; height:${width}px"></div>`
     )
-  }
+  }  
 }
 
 function getRandomHexColor() {
@@ -32,7 +39,9 @@ function getRandomHexColor() {
 }
 
 
-destroyBtn.addEventListener('click', () => {
+
+
+function destroyBoxes(){
   const elements =[...boxesArea.children]
   elements.map(element => element.remove())
-});
+}
